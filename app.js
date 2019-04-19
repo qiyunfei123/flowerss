@@ -11,7 +11,7 @@ var pool = mysql.createPool({
   port     : process.env.MYSQL_PORT,
   user     : process.env.ACCESSKEY,
   password : process.env.SECRETKEY,
-  database : 'app_' + process.env.APPNAME
+  database : 'app_' + process.env.APPNAME,
 });
 //3:创建express对象
 var server = express();
@@ -48,13 +48,13 @@ server.listen(5050);
 server.get("/imglist",(req,res)=>{
   var rows = [
     {id:1,
-      img_url:"http://127.0.0.1:3000/img/banner1.jpg"},
+      img_url:"img/banner1.jpg"},
     {id:2,
-      img_url:"http://127.0.0.1:3000/img/banner2.jpg"},
+      img_url:"img/banner2.jpg"},
     {id:3,
-      img_url:"http://127.0.0.1:3000/img/banner3.jpg"},
+      img_url:"img/banner3.jpg"},
     {id:4,
-      img_url:"http://127.0.0.1:3000/img/banner4.jpg"}
+      img_url:"img/banner4.jpg"}
   ];
   res.send({code:1,data:rows});
 });
